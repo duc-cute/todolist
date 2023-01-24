@@ -1,13 +1,51 @@
-body {
+* {
+  padding: 0;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  box-sizing: border-box;
+  font-family: "Open Sans", sans-serif;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+:root {
+  --shadow1: 0 5px 10px rgb(0 0 0 / 10%);
+  --shadow2: inset 5px 5px rgb(0 0 0 / 10%), inset 5px 5px rgb(0 0 0 / 10%),
+    inset 0px -5px 5px rgb(0 0 0 /10%), inset 0px -5px 5px rgb(0 0 0 /10%);
+  --light-gray: #eee;
+  --green-color: #00a816;
+  --blue-color: #628ba7;
+}
+
+body {
+  height: 100vh;
+  background-color: var(--light-gray);
+}
+
+.container {
+  width: 100vw;
+  height: 100vh;
+  padding: 3rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.container::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  background: url("https://img.freepik.com/free-vector/pirate-ship-moored-secret-island-with-treasure-chest_107791-6935.jpg?w=1380&t=st=1674548201~exp=1674548801~hmac=8d087400fab39191d9da4b63a204f0eb792c96e359d01a0d9f09063cd5875be2");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+.container h1 {
+  font-size: 3rem;
+  color: aqua;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  z-index: 1;
 }

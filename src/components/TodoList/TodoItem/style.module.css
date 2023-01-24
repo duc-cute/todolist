@@ -1,0 +1,38 @@
+.todo-wrapper {
+  position: relative;
+  min-height: 55px;
+  display: flex;
+  border-bottom: 1px solid var(--light-gray);
+}
+
+.todo-item {
+  width: 100%;
+  padding: 1rem;
+  background-color: #fff;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  z-index: 2;
+  transition: transform 0.5s ease-out;
+}
+
+.todo-item.open {
+  transform: translateX(-150px);
+}
+
+.todo-item span {
+  flex: 1;
+  font-size: 16px;
+}
+
+.toggle-icon {
+  width: 30px;
+  height: 30px;
+  background-color: #fff;
+  border-radius: 50%;
+  box-shadow: var(--shadow1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}

@@ -1,0 +1,51 @@
+.todo-menu {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 150px;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  background-color: #fff;
+  box-shadow: var(--shadow2);
+}
+
+.btn {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid;
+  border-radius: 50%;
+  font-size: 24px;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+.delete-btn {
+  color: #fff;
+  border-color: red;
+  color: red;
+}
+
+.delete-btn:hover {
+  background-color: red;
+  border: none;
+  color: white;
+}
+
+.completed-btn {
+  background-color: #fff;
+  border-color: var(--green-color);
+  color: var(--green-color);
+}
+
+.completed-btn:hover,
+.completed-btn.completed {
+  background-color: var(--green-color);
+  border: none;
+  color: #fff;
+}

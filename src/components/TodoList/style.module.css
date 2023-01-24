@@ -1,0 +1,11 @@
+.todoList-wrapper {
+  width: 500px;
+  max-height: 80%;
+  background-color: #fff;
+  border-radius: 10px;
+  z-index: 1;
+  margin-top: 3rem;
+  margin-bottom: 1rem;
+  box-shadow: var(--shadow1);
+  overflow-y: auto;
+}

@@ -1,23 +1,67 @@
-import logo from './logo.svg';
-import './App.css';
+import TodoList from "./components/TodoList/TodoList";
+import { v4 as uuidv4 } from "uuid";
+import TodoInput from "./components/TodoInput/TodoInput";
+import useLocalStorage from "./hooks/useLocalStorage";
+
+const TODOS__DATA = [
+  {
+    id: 1,
+    text: "Reactjs",
+    completed: false,
+  },
+  {
+    id: 2,
+    text: "Node js",
+    completed: false,
+  },
+  {
+    id: 3,
+    text: "Typescript",
+    completed: false,
+  },
+];
 
 function App() {
+  const [todos, setTodos] = useLocalStorage(TODOS__DATA);
+
+  const addTodo = (todoText) => {
+    setTodos([
+      {
+        id: uuidv4(),
+        text: todoText,
+        completed: false,
+      },
+      ...todos,
+    ]);
+  };
+
+  const deleteTodo = (todoId) => {
+    setTodos((curr) => curr.filter((todo) => todo.id !== todoId));
+  };
+
+  const completedTodo = (todoId) => {
+    setTodos((curr) =>
+      curr.map((todo) =>
+        todo.id === todoId
+          ? { ...todo, completed: todo.completed ? false : true }
+          : todo
+      )
+    );
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="container">
+      <h1>Todo App</h1>
+
+      {/* Todo List */}
+      <TodoList
+        todos={todos}
+        deleteTodo={deleteTodo}
+        completedTodo={completedTodo}
+      />
+
+      {/* Todo Input */}
+      <TodoInput addTodo={addTodo} />
     </div>
   );
 }
